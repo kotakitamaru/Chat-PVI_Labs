@@ -1,0 +1,42 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+table{
+    width:80%;
+    margin-left: 90px;
+    margin-right: auto;
+    text-align: center;
+    table-layout: fixed;
+
+}
+tr{
+    height: 50px;
+}
+
+button {
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+  }
+
+.top-bar {
+    height: 40px;
+    width: 100%;
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .user-button
+  {
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+  }
