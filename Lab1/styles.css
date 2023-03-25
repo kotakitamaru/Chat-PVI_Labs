@@ -139,7 +139,8 @@ button:hover{
   border-color:grey;
   border-style: solid;
   height: 25px; 
-  margin-top:7px; 
+  width: 25px;
+  margin-bottom: 10%;
   align-items: center; 
   border-radius: 50%; 
 }
