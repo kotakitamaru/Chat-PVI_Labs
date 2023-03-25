@@ -10,7 +10,7 @@ function addStudent()
     'Markiv Olena',
     'F',
     '18.01.2005',
-    '<input type="radio"/>',
+    '<input type= checkbox class = "status-button"/>',
     '<button style = "background-image: url(\'pencil.png\'); background-size:auto 50%; background-repeat: no-repeat; background-position: center;"></button><button onclick="deleteStudent(this)" style = "background-image: url(\'delete.png\'); background-size:auto 50%; background-repeat: no-repeat; background-position: center; margin-left: 4px"></button>'];
 
     var rows = document.querySelectorAll('#TableBody tr');
@@ -19,9 +19,8 @@ function addStudent()
     for(var i = 0; i < cells.length; i++){
         cells[i].innerHTML = cellText[i];
     }
-
-
     linesFilled++;
+    closeAddStudent()
 }
 
 function deleteStudent(button) {
@@ -46,4 +45,14 @@ function deleteStudent(button) {
     }
   }
   linesFilled--;
+}
+
+function closeAddStudent(){
+  const overlay = document.getElementById('add-student-overlay');
+  overlay.style.display = 'none';
+}
+
+function openAddStudent(){
+  const overlay = document.getElementById('add-student-overlay');
+  overlay.style.display = 'flex';
 }

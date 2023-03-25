@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head >
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
@@ -8,12 +8,11 @@
 </head>
 <body style="font-family: sans-serif;">
 <div class="top-bar">
-    <a href="https://lpnu.ua/">CMS</a>
-    <div style="float:right">
-        <button class="user-button">
-            <img src="user.png" style="height: 25px; margin-top:0;">
-            <label style="vertical-align: middle;">Denys</label>
-        </button>
+    <a href="https://lpnu.ua/" style="text-decoration: none; color: white; position: absolute; top:10px; left:10px">CMS</a>
+    <div class="top-right-bar">
+        <label style="color: white; margin-top: 15px;margin-right: 10px; font-size: smaller;">Denys</label>
+        <img class="profile-picture" src="user.jpg">
+
     </div>
 </div>
 
@@ -23,18 +22,20 @@
     <p>Tasks</p>
 </div>
 
-<h1 style="margin-top: 40px; margin-left: 100px;">Students</h1>
-<button onclick="addStudent()" style="float:right"></button>
-<table>
-    <thead>
+
+<div class="table">
+<p style="text-align: left; font-size: 32px;">Students</p>
+<button onclick="openAddStudent()" class="add-button">+</button>
+<table style = "width: 100%; ">
+    <thead style="text-align: center;">
     <tr style="font-family: sans-serif; font-size: 50%; font-weight:normal;">
-        <th style="width: 9%;"></th>
-        <th style="width: 18%;">Group</th>
-        <th style="width: 26%;">Name</th>
-        <th style="width: 6%;">Gender</th>
-        <th style="width: 18%;">Bitrhday</th>
-        <th style="width: 9%;">Status</th>
-        <th style="width: 14%;">Options</th>
+        <td style="width: 9%;"></td>
+        <td style="width: 18%;">Group</td>
+        <td style="width: 26%;">Name</td>
+        <td style="width: 6%;">Gender</td>
+        <td style="width: 18%;">Bitrhday</td>
+        <td style="width: 9%;">Status</td>
+        <td style="width: 14%;">Options</td>
     </tr>
     </thead>
     <tbody id="TableBody" style="font-family: sans-serif; font-weight:bold; font-size: medium;">
@@ -44,7 +45,7 @@
         <th>Bartosevych Denys</th>
         <th>M</th>
         <th>27.08.2004</th>
-        <th><input type="radio"/></th>
+        <th><input type= checkbox class = "status-button"/></th>
         <th><button style = "background-image: url('pencil.png'); background-size:auto 50%; background-repeat: no-repeat; background-position: center;"></button>
             <button onclick="deleteStudent(this)" style = "background-image: url('delete.png'); background-size:auto 50%; background-repeat: no-repeat; background-position: center;"></button></th>
     </tr>
@@ -77,13 +78,56 @@
     </tr>
     </tbody>
 </table>
-<p style="text-align: center; margin-left: 40px;">
-    <button><label></label></button>
-    <button></button>
-    <button></button>
-    <button></button>
-    <button></button>  
-    <button></button> 
+</div>
+<p style="text-align: center; margin-left: 40px; padding-top: 0; padding-bottom: 0;">
+    <button>&lt;</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>  
+    <button>&gt;</button> 
 </p>
+
+<div class="overlay" id = "add-student-overlay">
+    <div class="overlay-inner">
+        <div class = "overlay-inner-top">
+            <button onclick="closeAddStudent()" style="padding: 0px 5px; margin: 3%;">X</button>
+            <p style="font-size: large; font-weight: bold; margin: 3%">Add student</p>
+        </div>
+        <div class = "overlay-inner-center">
+            <div class = "overlay-imputs">
+            <label for="select-group">Group:</label>
+            <select class="select-group" name="select-group">
+                  <option value="" disabled selected>Select group</option>
+                  <option value="PZ-21">PZ-21</option>
+                  <option value="PZ-22">PZ-22</option>
+                  <option value="PZ-23">PZ-23</option>
+                  <option value="PZ-24">PZ-24</option>
+                  <option value="PZ-25">PZ-25</option>
+                  <option value="PZ-26">PZ-26</option>
+            </select><br><br>
+            <label>First name:</label>
+            <input type="text" class="first-name" name="first-name"></li><br><br>
+            <label>Last name:</label>
+            <input type="text" class="last-name" name="last-name"></li><br><br>
+            <label>Group:</label>
+            <select class="gender" name="gender">
+                  <option value="" disabled selected>Select gender</option>
+                  <option value="male">male</option>
+                  <option value="female">female</option>
+                  <option value="other">other</option>
+            </select><br><br>
+            <label>Birthday:</label>
+            <input type="date" class="birthday" name="birthday">
+            </div>
+        </div>
+        <div class = "overlay-inner-bottom">
+            <button onclick="closeAddStudent()" style="margin:3%; padding: 0px 5px;">Cancel</button>
+            <button onclick="addStudent()" style="margin:3%; padding: 0px 5px;">Ok</button>
+
+        </div>
+    </div>
+  </div>
+
 </body>
 </html>
