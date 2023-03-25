@@ -13,8 +13,7 @@ tr{
 
 button {
     background-color: #FFFFFF;
-    border: 2px black;
-    border-style: hidden;
+    border: 1px solid black;
     padding: 10px 10px;
     text-align: center;
     display: inline-block;
@@ -22,7 +21,7 @@ button {
   }
 
 button:hover{
-    border: 2px solid;
+    border: 2px solid black;
 
 }
 
@@ -56,6 +55,7 @@ button:hover{
     height: 60%;
     background-color: #fff;
     border-radius: 1%;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   }
 
 .overlay-inner-top {
@@ -127,6 +127,12 @@ button:hover{
   background-color: #00ff26;
 }
 
+.notifications{
+  height: 25px; 
+  margin-right: 15px;
+  margin-bottom: 3px;
+}
+
 .profile-picture{
   margin-right: 5px;
   border-width:2px;
@@ -148,4 +154,87 @@ button:hover{
   padding: 5px 10px;
   margin-bottom: 5px;
   float: right;
+}
+
+.menu, .drop-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  padding: 6px 10px;
+  color: #fff;
+  display: block;
+}
+
+.drop-menu{
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 100px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+
+.drop-menu-item {
+  width: 100%;
+}
+
+.drop-menu-item:hover {
+  background-color: #eee;
+}
+
+.drop-menu-item a {
+  color: #555;
+}
+
+.menu-item:hover .drop-menu {
+  display: block;
+}
+
+.message-profile-pic{
+  height: 25px; 
+  padding-right: 5px;
+  align-items: center; 
+  border-radius: 50%; 
+}
+
+.circle{
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  background-color: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  animation-name: red-circle;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+
+@keyframes red-circle {
+  0%{
+    width: 5px;
+    height: 5px;
+  }
+  50%{
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    right: 10px;
+  }
+  100%{
+    width: 5px;
+    height: 5px;
+    top: 13px;
+    right: 13px;
+  }
 }
