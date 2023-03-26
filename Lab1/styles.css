@@ -129,7 +129,6 @@ button:hover{
 
 .notifications{
   height: 25px; 
-  margin-right: 15px;
   margin-bottom: 3px;
 }
 
@@ -140,7 +139,7 @@ button:hover{
   border-style: solid;
   height: 25px; 
   width: 25px;
-  margin-bottom: 10%;
+  margin-bottom: 0px;
   align-items: center; 
   border-radius: 50%; 
 }
@@ -175,15 +174,6 @@ button:hover{
   display: block;
 }
 
-.drop-menu{
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  min-width: 100px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-}
-
-
 .drop-menu-item {
   width: 100%;
 }
@@ -194,6 +184,14 @@ button:hover{
 
 .drop-menu-item a {
   color: #555;
+}
+
+.drop-menu{
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 100px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 }
 
 .menu-item:hover .drop-menu {
@@ -209,8 +207,8 @@ button:hover{
 
 .circle{
   position: absolute;
-  top: 13px;
-  right: 13px;
+  top: 10px;
+  right: 10px;
   background-color: red;
   width: 5px;
   height: 5px;
@@ -223,19 +221,12 @@ button:hover{
 
 @keyframes red-circle {
   0%{
-    width: 5px;
-    height: 5px;
+    transform: scale(1);
   }
   50%{
-    width: 10px;
-    height: 10px;
-    top: 10px;
-    right: 10px;
+    transform: scale(2);
   }
   100%{
-    width: 5px;
-    height: 5px;
-    top: 13px;
-    right: 13px;
+    transform: scale(1);
   }
 }
