@@ -76,10 +76,10 @@
             <p style="font-size: large; font-weight: bold; margin: 3%">Add student</p>
         </div>
         <div class = "overlay-inner-center">
-            <div class = "overlay-imputs">
+            <div class = "overlay-inputs">
             <input type = "hidden">
             <label for="select-group">Group:</label>
-            <select class="select-group" name="select-group">
+            <select class="select-group" id="select-group">
                   <option value="" disabled selected>Select group</option>
                   <option value="PZ-21">PZ-21</option>
                   <option value="PZ-22">PZ-22</option>
@@ -88,18 +88,18 @@
                   <option value="PZ-25">PZ-25</option>
                   <option value="PZ-26">PZ-26</option>
             </select><br><br>
-            <label>First name:</label>
-            <input type="text" class="first-name" name="first-name"></li><br><br>
-            <label>Last name:</label>
-            <input type="text" class="last-name" name="last-name"></li><br><br>
-            <label>Group:</label>
-            <select class="gender" name="gender">
+            <label for="first-name">First name:</label>
+            <input type="text" class="first-name" id="first-name"></li><br><br>
+            <label for="last-name">Last name:</label>
+            <input type="text" class="last-name" id="last-name"></li><br><br>
+            <label for="gender">Gender:</label>
+            <select class="gender" id="gender">
                   <option value="" disabled selected>Select gender</option>
-                  <option value="male">male</option>
-                  <option value="female">female</option>
+                  <option value="M">male</option>
+                  <option value="F">female</option>
             </select><br><br>
-            <label>Birthday:</label>
-            <input type="date" class="birthday" name="birthday">
+            <label for="birthday">Birthday:</label>
+            <input type="date" class="birthday" id="birthday">
             </div>
         </div>
         <div class = "overlay-inner-bottom">
@@ -108,6 +108,5 @@
         </div>
     </div>
   </div>
-
 </body>
 </html>
