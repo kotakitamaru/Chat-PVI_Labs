@@ -1,0 +1,229 @@
+
+div.table{
+    width: 90%;
+}
+tr{
+    text-align: center;
+    height: 50px;
+}
+.pagination
+{
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 20%;
+  width: 70%;
+}
+.pagination-button{
+  position: relative;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 75%;
+  border-radius: 5px;
+}
+.pagination-button-text{
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+button {
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+  }
+
+
+.top-bar {
+    height: 40px;
+    width: 100%;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+.overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+  
+.overlay-inner {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    width: 35%;
+    min-height: 450px;
+    top:15%;
+    left:32.5%;
+    background-color: #fff !important; 
+    border-radius: 1%;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  }
+
+.overlay-inner-top {
+    display: flex; 
+    height: 13%; 
+    justify-content: space-between; 
+    border-bottom: black; 
+    border-bottom-style: solid; 
+    border-bottom-width: 1px; 
+    flex-direction: row-reverse;
+  }
+
+.overlay-inner-bottom{
+    display: flex; 
+    flex-direction: row-reverse;
+    height: 12%; 
+    width: 100%; 
+    border-top: black; 
+    border-top-style: solid; 
+    border-top-width: 1px; 
+    position: absolute; 
+    bottom: 0px;
+    left: 0px;
+  }
+
+.overlay-inner-center{
+    text-align: center;
+    
+  }
+.overlay-inputs{
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
+.select-group, .first-name, .last-name, .birthday, .gender{
+  width: 30%;
+}
+
+
+input[type=checkbox].status-button {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #898989;
+}
+
+
+input[type=checkbox].status-button:checked {
+  background-color: #00ff26;
+}
+
+.notifications{
+  height: 25px; 
+  margin-bottom: 3px;
+}
+
+.profile-picture{
+  margin-right: 5px;
+  border-width:2px;
+  border-color:grey;
+  border-style: solid;
+  height: 25px; 
+  width: 25px;
+  margin-bottom: 0px;
+  align-items: center; 
+  border-radius: 50%; 
+}
+.profile-picture:hover{
+  border-color: aqua; 
+  border-style: solid;
+
+}
+
+.add-button{
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  float: right;
+}
+
+.menu, .drop-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+
+.menu-item a {
+  text-decoration: none;
+  padding: 6px 10px;
+  color: #fff;
+  display: block;
+}
+
+.drop-menu-item {
+  width: 100%;
+}
+
+.drop-menu-item:hover {
+  background-color: #eee;
+}
+
+.drop-menu-item a {
+  color: #555;
+}
+
+.drop-menu{
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 100px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.menu-item:hover .drop-menu {
+  display: block;
+}
+
+.message-profile-pic{
+  height: 25px; 
+  padding-right: 5px;
+  align-items: center; 
+  border-radius: 50%; 
+}
+
+.circle{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  animation-name: red-circle;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+
+@keyframes red-circle {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
