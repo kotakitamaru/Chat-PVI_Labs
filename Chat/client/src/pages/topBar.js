@@ -7,7 +7,7 @@ function TopBar()
 {
     const { isAuthenticated, userId, login, logout } = useContext(AuthContext);
 
-    const [userData,setUserData] = useState(isAuthenticated?fetch("http://localhost:3001/auth/" + userId)
+    const [userData,setUserData] = useState(isAuthenticated?fetch("https://pvi-lab-server.onrender.com/auth/" + userId)
         .then(response =>
             response.json())
         .then(data => {
@@ -15,7 +15,7 @@ function TopBar()
         }):null);
 
     useEffect(()=>{
-        isAuthenticated&&fetch("http://localhost:3001/auth/" + userId)
+        isAuthenticated&&fetch("https://pvi-lab-server.onrender.com/auth/" + userId)
             .then(response =>
                 response.json())
             .then(data => {

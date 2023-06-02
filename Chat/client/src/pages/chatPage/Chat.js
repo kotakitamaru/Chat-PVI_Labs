@@ -15,7 +15,7 @@ function Chat({socket,room}) {
     }
     const modalShow = () => setShow(true);
 
-    fetch("http://localhost:3001/auth/" + userId)
+    fetch("https://pvi-lab-server.onrender.com/auth/" + userId)
         .then(response =>
             response.json())
         .then(data => {
@@ -42,7 +42,7 @@ function Chat({socket,room}) {
     }, [socket])
 
     useEffect(()=>{
-        fetch("http://localhost:3001/chat/oneRoom/" + room)
+        fetch("https://pvi-lab-server.onrender.com/chat/oneRoom/" + room)
             .then(response => {
                 if (response)
                     return response.json();
@@ -61,7 +61,7 @@ function Chat({socket,room}) {
             room: currentRoom._id,
             username: data.secondMemberUsername
         }
-        fetch("http://localhost:3001/chat/addUser",{
+        fetch("https://pvi-lab-server.onrender.com/chat/addUser",{
             method: "POST",
             mode: 'cors',
             body: JSON.stringify(dataToSend),

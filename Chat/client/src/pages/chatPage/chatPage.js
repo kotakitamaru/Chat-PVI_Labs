@@ -9,7 +9,7 @@ import {useForm} from "react-hook-form";
 function ChatPage() {
     const {register,handleSubmit,setValue} = useForm();
     const { isAuthenticated, userId, login, logout } = useContext(AuthContext);
-    const socket = io.connect('http://localhost:3001/');
+    const socket = io.connect('https://pvi-lab-server.onrender.com');
     const [searchParams, setSearchParams] = useSearchParams();
 
     const joinRoom = async () => {
@@ -25,7 +25,7 @@ function ChatPage() {
 
     const [chatRooms, setChatRooms] = useState([]);
     const fetchChatRooms = () => {
-        fetch("http://localhost:3001/chat/rooms/" + userId)
+        fetch("https://pvi-lab-server.onrender.com/chat/rooms/" + userId)
             .then(response => {
                 return response.json();
             })
@@ -40,7 +40,7 @@ function ChatPage() {
 
 
     const createRoom = (formData) => {
-        fetch("http://localhost:3001/auth/"+userId+"/"+formData.secondMember)
+        fetch("https://pvi-lab-server.onrender.com/auth/"+userId+"/"+formData.secondMember)
             .then(response => {
                 console.log(response);
                 return response.json();
@@ -49,7 +49,7 @@ function ChatPage() {
                 console.log(data);
                 if(data.message)
                     throw new Error("User not found");
-                return fetch("http://localhost:3001/chat/rooms", {
+                return fetch("https://pvi-lab-server.onrender.com/chat/rooms", {
                     method: 'POST',
                     mode: 'cors',
                     body: JSON.stringify({users: data, name: formData.roomName}),

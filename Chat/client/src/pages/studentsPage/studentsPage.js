@@ -10,7 +10,7 @@ function StudentsPage()
     const [users, setUsers] = useState([]);
     const [idToEdit, setIdToEdit] = useState(null);
     const fetchUserData = () => {
-        fetch("http://localhost:3001/students")
+        fetch("https://pvi-lab-server.onrender.com/students")
           .then(response => {
             return response.json();
           })
@@ -38,7 +38,7 @@ function StudentsPage()
           alert(Valid.message);
           return;
         }
-        fetch('http://localhost:3001/students', {
+        fetch('https://pvi-lab-server.onrender.com/students', {
         method: 'POST', 
         mode: 'cors', 
         body: JSON.stringify(tempData),
@@ -62,7 +62,7 @@ function StudentsPage()
       if(!/^[A-Za-z]*$/.test(data.lastName)){
         return {isValid: false,message:"Last name must contain only latin letters"};
       }
-      fetch('http://localhost:3001/students/findSimilar', {
+      fetch('https://pvi-lab-server.onrender.com/students/findSimilar', {
         method: 'POST', 
         mode: 'cors', 
         body: JSON.stringify(data),
@@ -84,7 +84,7 @@ function StudentsPage()
         const data = {
             _id:id,
         }
-        fetch("http://localhost:3001/students/delete",{
+        fetch("https://pvi-lab-server.onrender.com/students/delete",{
             method: 'POST',
             mode:'cors',
             body: JSON.stringify(data),
@@ -98,7 +98,7 @@ function StudentsPage()
         })
     }
     const editStudent = (x) => {
-      fetch("http://localhost:3001/students/" + x)
+      fetch("https://pvi-lab-server.onrender.com/students/" + x)
           .then(response => {
             return response.json();
           })

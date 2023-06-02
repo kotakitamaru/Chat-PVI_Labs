@@ -17,7 +17,7 @@ function LoginPage() {
             return;
         }
 
-        fetch("http://localhost:3001/auth/sameName/" + data.username)
+        fetch("https://pvi-lab-server.onrender.com/auth/sameName/" + data.username)
             .then(response =>
                 response.json())
             .then(result => {
@@ -34,7 +34,7 @@ function LoginPage() {
                     password: data.password,
                     username: data.username
                 }
-                fetch("http://localhost:3001/auth/createAccount",{
+                fetch("https://pvi-lab-server.onrender.com/auth/createAccount",{
                     method: 'POST',
                     mode:'cors',
                     body: JSON.stringify(tempData),

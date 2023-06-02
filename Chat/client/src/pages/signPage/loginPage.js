@@ -18,7 +18,7 @@ function LoginPage() {
             username: data.username,
             password: data.password
         }
-        fetch("http://localhost:3001/auth/login/",{
+        fetch("https://pvi-lab-server.onrender.com/auth/login/",{
             method: 'POST',
             mode:'cors',
             body: JSON.stringify(tempData),
