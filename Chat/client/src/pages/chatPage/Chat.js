@@ -61,7 +61,7 @@ function Chat({socket,room}) {
             room: currentRoom._id,
             username: data.secondMemberUsername
         }
-        fetch("https://pvi-lab-server.onrender.com/chat/addUser",{
+        fetch("https://pvi-lab-server.onrender.com/chat/addUser/" + currentRoom._id,{
             method: "POST",
             mode: 'cors',
             body: JSON.stringify(dataToSend),
@@ -72,7 +72,6 @@ function Chat({socket,room}) {
         })
             .then(response=> response && response.json())
             .then(data => (data && data.message) && alert(data.message));
-        //data.secondMemberUsername
     }
 
 

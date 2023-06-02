@@ -43,11 +43,12 @@ function ChatPage() {
         fetch("https://pvi-lab-server.onrender.com/auth/"+userId+"/"+formData.secondMember)
             .then(response => {
                 console.log(response);
-                return response.json();
+                if(response)
+                    return response.json();
             })
             .then(data => {
                 console.log(data);
-                if(data.message)
+                if (data.message)
                     throw new Error("User not found");
                 return fetch("https://pvi-lab-server.onrender.com/chat/rooms", {
                     method: 'POST',
@@ -57,14 +58,11 @@ function ChatPage() {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     }
-                }).then(response => {
-                    return response.json();
-                }).then(res => {
-                    if(res.message)
-                        alert(res.message);
-                });
-            }).then(res =>
-            res.json())
+                })
+            })
+            .then(response => {
+                return response.json();
+            })
             .then(roomdata => window.location.href = "?room=" + roomdata._id)
             .catch(err => alert(err.message));
     }
