@@ -71,7 +71,7 @@ function Chat({socket,room}) {
             }
         })
             .then(response=> response && response.json())
-            .then(data => (data && data.message) && alert(data.message));
+            .then(data => (data && data.message) ? alert(data.message) : window.location.reload());
     }
 
 

@@ -17,7 +17,7 @@ router.post('/rooms',(req,res) => {
     res.json({_id : newRoom._id});
 });
 
-router.post('/addUser/:id',(req,res) => {
+router.post('/addUser/',(req,res) => {
     User.UserModel.findOne({username :req.body.username})
         .then((data)=>{
             console.log(data);
@@ -26,7 +26,7 @@ router.post('/addUser/:id',(req,res) => {
                 return;
             }
             ChatRoom.findOne({
-                    _id: req.body.id,
+                    _id: req.body.room,
                     users : {
                         _id: data._id,
                         username: data.username,
