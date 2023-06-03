@@ -31,8 +31,9 @@ function Chat({socket,room}) {
             message: currentMessage,
             date: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes(),
         }
-
+        setCurrentMessage("");
         await socket.emit("send_message", messageData);
+
     };
 
     useEffect(() => {
@@ -152,7 +153,7 @@ function Chat({socket,room}) {
 
             <div className="card-footer d-flex">
                 <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Enter your message"
+                    <input type="text" className="form-control" placeholder="Enter your message" value={currentMessage}
                            onChange={(e)=>setCurrentMessage(e.target.value)}
                            aria-label="Recipient's username" aria-describedby="button-addon2"/>
                         <button className="btn btn-outline-secondary" type="button"  onClick={() => sendMessage()} id="button-addon2">Send</button>
